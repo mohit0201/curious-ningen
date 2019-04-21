@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home: Choose a section</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <!-- <link rel="stylesheet" href="index.css"> -->
+        <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet">
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="cnicon.ico" /> -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='index/cnicon.ico') }}" />
+    </head>
+
+    <style>
+        #result{
+            color:thistle;
+            font-family: "Caviar Dreams", Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+            
+        }
+        .container {
+    margin-top: 20px;
+    position: relative;
+}
+    </style>
+
+    <body>
+        <div id="result">
+            <h4><b>Welcome {{result}}!</b></h4>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="container">
+                        <h5 class="card-header">ANIMES</h5>
+                        <div class="card">
+                            <img class="card-img-top image" src="{{ url_for('static', filename='index/animecollage1.jpg') }}" alt="Card_Img">
+                            <div class="middle">
+                                <div class="text"><a href="/anime">Let's Go!</a></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text">You love anime but what tops this list of the best anime series ever made?
+                                    With so much new anime debuting each year, the list of best anime will only grow.
+                                    The blanket term "anime" in the US can refer to any animation originating in Japan, and specifically differentiates a few aspects of Japanese animation from more Western styles.
+                                </p>
+                            </div>
+                        </div>  
+                    </div>  
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="container">
+                        <h5 class="card-header">MOVIES</h5>
+                        <div class="card">
+                            <img class="card-img-top image" src="{{ url_for('static', filename='index/moviecollage1.jpg') }}" alt="Card_Img">
+                            <div class="middle">
+                                <div class="text"><a href="/movies">Let's Go!</a></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text">Need a good break this weekend? Tired of watching the same old stuff over and over again on your
+                                    TV. Well it's time to lift up your your spirits. All you need now is to chill on your couch and kick back
+                                    with some snacks or a chilled beer(if you're a grown up, that is!). Check out our handpicked collection of
+                                    some of the coolest movies.
+                                </p>
+                            </div>
+                        </div>    
+                    </div>  
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="container">
+                        <h5 class="card-header">TV SERIES</h5>
+                        <div class="card">
+                            <img class="card-img-top image" src="{{ url_for('static', filename='index/tvcollage1.jpg') }}" alt="Card_Img">
+                            <div class="middle">
+                                <div class="text"><a href="/TV">Let's Go!</a></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text">It is surely hard and frustrating enough to find a good show that you can watch till the end
+                                    without
+                                    having to curse yourself when it finishes. No one would like to waste 30-40 hours
+                                    on a show that loses its meaning halfway. But, you can always find some that you have to binge watch
+                                    because, let's face it, they are just that good!</p>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

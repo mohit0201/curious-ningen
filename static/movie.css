@@ -1,0 +1,154 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(/BebasNeue.otf);
+}
+
+@font-face {
+    font-family: CaviarDreams;
+    src: url(/CaviarDreams.ttf);
+}
+
+@font-face {
+    font-family: Exo;
+    src: url(/Exo.otf);
+}
+
+#heading,
+#ratingWatch,
+#footer,
+#navText {
+    font-family: "Caviar Dreams", Arial, Helvetica, sans-serif;
+}
+.dropdown-menu {
+    max-height: 280px;
+    overflow: scroll;
+}
+.card-body,
+.card-title {
+    font-family: "Caviar Dreams", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.modal-body,.modal-header,.modal-footer{
+    background-color: #242729;
+}
+
+#introline {
+    font-family: "Caviar Dreams", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(218, 142, 2);
+}
+    .sliderimage {
+        width: 100%;
+        height: 56.25%;
+    }
+
+    #carouselBox {
+        display: block;
+        width: 640px;
+        height: 360px;
+        padding: 5px 5px 5px 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .carouselOverlay {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5);
+        /* Black see-through */
+
+        color: #f1f1f1;
+        width: 100%;
+        transition: .5s ease;
+        opacity: 0;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+#titles {
+    font-family: "Exo", Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#descriptionText {
+    font-family: "Caviar Dreams", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.navbar {
+    position: fixed;
+    background-color: #161616;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+}
+
+#mainContent {
+    background-color: #212025;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+#linkSection {
+    font-family: "Caviar Dreams",
+    Arial,
+    Helvetica,
+    sans-serif;
+    background-color: #1b1b20;
+    color: #640333;
+    padding-top: 15px;
+}
+
+#content {
+    padding-top: 50px;
+    background-color: #242729;
+}
+
+.asidelink {
+    text-align: center;
+}
+
+.sliderimage {
+    width: 100%;
+    height: 56.25%;
+}
+
+.titleImage {
+    display: block;
+    width: 300px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 5px 5px 5px;
+}
+
+#footer {
+    margin-top: 15px;
+    /* color: bisque; */
+}
+
+#contact,
+#followus {
+    text-align: center;
+    display: block;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
+a:active {
+    color: gray;
+}

@@ -1,0 +1,146 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(/BebasNeue.otf);
+    }
+@font-face {
+    font-family: CaviarDreams;
+    src: url(/CaviarDreams.ttf);
+    }
+@font-face {
+    font-family: Exo;
+    src: url(/Exo.otf);
+    }
+
+#heading,
+#ratingWatch,
+#footer,
+#navText {
+    font-family: "Caviar Dreams", Arial, Helvetica, sans-serif;
+}
+
+.card-body,.card-title{
+    font-family: "Caviar Dreams", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#introline {
+    font-family: "Caviar Dreams",
+    Arial,
+    Helvetica,
+    sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(230, 200, 144);
+}
+
+.navbar {
+    position: fixed;
+    background-color:#161616;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+}
+
+.dropdown-menu{
+    max-height: 280px;
+    overflow: scroll;
+}
+
+#mainContent {
+    background-color: #212025;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+#linkSection {
+    font-family: "Caviar Dreams",
+    Arial,
+    Helvetica,
+    sans-serif;
+    background-color: #1b1b20;
+    color: #dbdad0;
+    padding-top: 15px;
+}
+
+#content {
+    padding-top: 50px;
+    background-color: #212025;
+}
+
+.asidelink {
+    text-align: center;
+    
+}
+
+    .sliderimage {
+    width: 100%;
+    height: 56.25%;
+}
+#carouselBox{
+    display: block;
+    width: 640px;
+    height: 360px;
+    padding: 5px 5px 5px 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.carouselOverlay{
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+#footer {
+    margin-top: 15px;
+    color: bisque;
+    
+}
+
+#contact,
+#followus,
+#time {
+    text-align: center;
+    display: block;
+    font-family: "Caviar Dreams",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+a:link {
+    color: gray;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: rgb(219, 37, 37);
+}
+
+a:active {
+    color: rgb(219, 37, 37);
+}
+
+hr{
+    background-color: rgb(75, 73, 73);
+}
+
+a.morelink {
+    text-decoration: none;
+    outline: none;
+}
+
+.morecontent span {
+    display: none;
+}

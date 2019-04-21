@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animes to watch</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.4/angular-sanitize.js"></script>
+    <!-- <link href="AnimePage/CSS/anime.css" rel="stylesheet" /> -->
+    <link href="{{ url_for('static', filename='anime.css') }}" rel="stylesheet">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="icon2.ico" /> -->
+    <script src="AnimePage/Scripts/anime.js" type="application/javascript"></script>
+    <script src="AnimePage/Scripts/MainController.js" type="application/javascript"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='index/cnicon.ico') }}" />
+</head>
+
+<body onload="onLoad()" ng-app="angularApp">
+    <div ng-controller="MainController">
+        <!--Navigation bar-->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-expand-m navbar-expand-sm navbar-dark bg-dark" id="navText">
+            <a class="navbar-brand mb-0 h1" href="/index">人間 Curious Ningen</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Animes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">TOP</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#ichi">Fullmetal Alchemist: Brotherhood</a>
+                            <a class="dropdown-item" href="#ni">Naruto</a>
+                            <a class="dropdown-item" href="#san">Naruto Shippuden</a>
+                            <a class="dropdown-item" href="#yon">Dragon Ball Z</a>
+                            <a class="dropdown-item" href="#go">Steins;Gate</a>
+                            <a class="dropdown-item" href="#roku">Death Note</a>
+                            <a class="dropdown-item" href="#nana">Code Geass</a>
+                            <a class="dropdown-item" href="#hachi">One Piece</a>
+                            <a class="dropdown-item" href="#kyuu">Attack on Titan</a>
+                            <a class="dropdown-item" href="#juu">Bleach</a>
+                            <a class="dropdown-item" href="#juuichi">My Teen Romantic Comedy SNAFU</a>
+                            <a class="dropdown-item" href="#juuni">Erased</a>
+                            <a class="dropdown-item" href="#juusan">Future Diary</a>
+                            <a class="dropdown-item" href="#juuyon">Hunter X Hunter</a>
+                            <a class="dropdown-item" href="#juugo">Anohana</a>
+                            <a class="dropdown-item" href="#juuroku">Kimi no na wa.</a>
+                            <a class="dropdown-item" href="#juunana">The Seven Deadly Sins</a>
+                            <a class="dropdown-item" href="#juuhachi">One Punch Man</a>
+                            <a class="dropdown-item" href="#juukyuu">Parasyte: The Maxim</a>
+                            <a class="dropdown-item" href="#nijuu">Tokyo Ghoul</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/login1">Logout</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <b>Get your curiosity piqued!</b>
+                </span>
+            </div>
+        </nav>
+
+        <!--Main content-->
+        <div class="container-fluid" id="content">
+            <div class="row">
+                <!--Left Pane-->
+                <aside class="col-lg-2 col-md-2 col-sm-3 col-xs-12 leftpane" id="linkSection">
+                    <!-- <h6 class="asidelink">Check these out on MyAnimeList</h6>
+                    <hr /> -->
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-secondary">Check these out on MyAnimeList</li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood?q=brotherhood">Fullmetal Alchemist: Brotherhood</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/20/Naruto">Naruto</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/1735/Naruto__Shippuuden">Naruto Shippuden</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/813/Dragon_Ball_Z">Dragon Ball Z</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/9253/Steins_Gate?q=steins">Steins;Gate</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/1535/Death_Note">Death Note</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/1575/Code_Geass__Hangyaku_no_Lelouch">Code Geass</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/21/One_Piece?q=one%20piece">One Piece</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/16498/Shingeki_no_Kyojin?q=attack%20on%20titan">Attack on Titan</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/269/Bleach?q=bleach">Bleach</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru?q=oregair">My Teen Romantic Comedy SNAFU</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/manga/39325/Boku_dake_ga_Inai_Machi?q=boku%20dake">Erased</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/10620/Mirai_Nikki?q=mirai%20nikki">Future Diary</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011?q=hunter%20x">Hunter X Hunter</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/9989/Ano_Hi_Mita_Hana_no_Namae_wo_Bokutachi_wa_Mada_Shiranai?q=anohana">Anohana</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/32281/Kimi_no_Na_wa?q=kimi%20no%20na">Kimi no na wa.</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/23755/Nanatsu_no_Taizai?q=nanatsu">The Seven Deadly Sins</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/30276/One_Punch_Man?q=one%20punch">One Punch Man</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu?q=parasyte">Parasyte: The Maxim</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/anime/22319/Tokyo_Ghoul?q=tokyo">Tokyo Ghoul</a></li>
+                    </ul>
+                    <hr />
+                </aside>
+
+                <section class="col-lg-8 col-md-8 col-sm-6 col-xs-12 jumbotron" id="mainContent">
+                    <!--Main Content Centre-->
+                    <h1 class="text-center" id="heading" style="color:rgb(230, 180, 16);">ANIMES YOU MUST WATCH.</h1>
+                    <hr/>
+                    <div class="carousel slide carousel-fade" data-ride="carousel" id="carouselBox">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">    
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/naruto1080.jpeg') }}" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/fmb1080.jpg') }}" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/dbz1080.jpg') }}" alt="Third slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/ns1080.jpg') }}" alt="Fourth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/op1080.jpg') }}" alt="Fifth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/sg1080.jpg') }}" alt="Seventh slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/dn10800.jpg') }}" alt="Eighth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/cg1080.jpg') }}" alt="Ninth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/aot1080.jpg') }}" alt="Tenth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="sliderimage img-responsive" src="{{ url_for('static', filename='anime/bleach1080.jpg') }}" alt="Eleventh slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselBox" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselBox" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        
+                    </div>
+                    <hr />
+                    <p id="introline">In the world of anime, nothing is impossible, and if you’re willing to try hard to achieve your goals, you will eventually make it. Unlike American cartoons, pretty often (if not always) the best anime has lots of depth, and there’s always
+                        a deeper meaning you can discover. There are millions of anime fans worldwide, just as there are millions of fans of American cartoons, graphic novels, and so on. Because its fan base keeps growing, we collected some of the best anime
+                        of all time that you will want to see. So here's a list of the <b>most popular Animes</b> that you absolutely cannot miss to watch.</p>
+                    <hr />
+                    
+                    <!--<aside id="bottom">
+                        <button class="btn btn-info">Comment</button>
+                        <button class="btn btn-dark">Share</button>
+                    </aside>
+                    <!--Contact Info-->
+                    <!--Comment section form-->
+                    <!--
+                    <p id="review">Review the article</p>
+                    <form action="" method="POST">
+
+                        <div class="row" id="review">
+                            <div class="col-lg-8 col-md-12 ">
+                                <input type="text" class="form-control" placeholder="Your comment here" required>
+                                <input type="number" id="articleRating" class="form-control" placeholder="Your rating" required>
+                                <p id="rating"></p>
+                                <!--<button onclick="checkNumber()">Submit</button>-->
+                         <!--   </div>
+                            <div class="col-lg-4 col-md-12" id="review">
+                                <button class="btn btn-block btn-dark" onclick="checkNumber()" type="submit">Submit</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                    <hr />
+                    <hr />
+
+                    <p id="review">The text changes. A Paragraph.</p>
+                    <button type="button" class="btn btn-dark   " onclick="myFunction()">Try it</button>
+                    <!--Card layout test!-->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="ichi">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/fmbcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Fullmetal Alchemist: Brotherhood</h5>
+                                    <p class="card-text"><b>Genre:</b>Adventure, Drama, Fantasy, Magic, Military, Shounen, Special.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong1">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Fullmetal Alchemist: Brotherhod</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Adventure, Drama, Fantasy, Magic, Military, Shounen,
+                                                        Special.<br /><br />
+                                                        In this world there exist alchemists, people who study and perform the art of
+                                                        alchemical transmutation - to manipulate objects
+                                                        and transform one object into another. They are bounded by the basic law of alchemy: in
+                                                        order to gain something you have
+                                                        to sacrifice something of the same value.<br /> The main character is the famous
+                                                        alchemist Edward Elric - also known as the
+                                                        Fullmetal Alchemist - who almost lost his little brother, Alphonse, in an alchemical
+                                                        accident. Edward managed to attach
+                                                        his brother's soul to a large suit of armor. While he did manage to save his brother's
+                                                        life, he paid the terrible price
+                                                        of his limbs.<br /> To get back what they've lost, the brothers embark on a journey to
+                                                        find the Philosopher's Stone that is
+                                                        said to amplify the powers of an alchemist enormously. Fullmetal Alchemist: Brotherhood
+                                                        is a re-telling of the story
+                                                        from the manga point of view.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BOm_PAI2goo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt1355642/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>9.0</b>
+                                                        <a href="https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood?q=brotherhood"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>9.25</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Fullmetal-Alchemist-Brotherhood-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/fullmetal-alchemist-brotherhood">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="ni">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/narutocard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Naruto</h5>
+                                    <p class="card-text"><b>Genre:</b>Action, Comedy, Martial Arts, Shounen, Super Power.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong2">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Naruto</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Comedy, Martial Arts, Shounen, Super Power.<br /><br />
+                                                        Naruto Uzumaki, a hyperactive and knuckle-headed ninja, lives in Konohagakure, the
+                                                        Hidden Leaf village. Moments prior to his birth, a huge demon known as the Kyuubi, the
+                                                        Nine-tailed Fox, attacked Konohagakure and wreaked havoc. In
+                                                        order to put an end to the Kyuubi's rampage, the leader of the village, the 4th Hokage,
+                                                        sacrificed his life and sealed the monstrous beast inside the newborn Naruto
+                                                        Shunned because of the presence of the Kyuubi inside him, Naruto struggles to find his
+                                                        place in the village. He strives
+                                                        to become the Hokage of Konohagakure, and he meets many friends and foes along the way.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j2hiC9BmJlQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="http://www.imdb.com/title/tt0409591/?ref_=nv_sr_2" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.2</b>
+                                                        <a href="https://myanimelist.net/anime/20/Naruto?q=naruto" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a><b>7.87</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Naruto-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/naruto">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="san">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/narutoscard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Naruto Shippuden</h5>
+                                    <p class="card-text"><b>Genre:</b>Action, Comedy, Martial Arts, Shounen, Super Power.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong3">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Naruto Shippuden</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Comedy, Martial Arts, Shounen, Super Power.<br /><br />
+                                                        It has been two and a half years since Naruto Uzumaki left Konohagakure, the Hidden
+                                                        Leaf Village, for intense training following events which fueled his desire to be
+                                                        stronger. Now Akatsuki, the mysterious organization of elite rogue
+                                                        ninja, is closing in on their grand plan which may threaten the safety of the entire
+                                                        shinobi world.Although Naruto is older and sinister events loom on the horizon, he has
+                                                        changed little in personality—still rambunctious and childish—though he is now far more
+                                                        confident and possesses an even greater determination to protect his friends
+                                                        and home. Come whatever may, Naruto will carry on with the fight for what is important
+                                                        to him, even at the expense of his own body, in the continuation of the saga about the
+                                                        boy who wishes to become Hokage.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1WLO0Owi5-A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="http://www.imdb.com/title/tt0988824/" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a> <b>8.5</b>
+                                                        <a href="https://myanimelist.net/anime/1735/Naruto__Shippuuden?q=naruto%20shippuden"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a><b>8.17</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Naruto-Shippuuden-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/naruto-shippuden">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="yon">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/dbzcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dragon Ball Z</h5>
+                                    <p class="card-text"><b>Genre:</b>Action, Adventure, Comedy, Dub, Martial Arts, Super Power.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong4">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Dragon Ball Z</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Adventure, Comedy, Dub, Martial Arts, Super
+                                                        Power.<br /><br />
+                                                        Goku is back with his new son, Gohan, but just when things are getting settled down,
+                                                        the adventures continue. Whether he is facing enemies such as Frieza, Cell, or Buu,
+                                                        Goku is proven to be an elite of his own and discovers his race,
+                                                        Saiyan and is able to reach Super Saiyan 3 form. He meets many new people, gaining
+                                                        allies and well as enemies, as he still finds time to raise a family and be the
+                                                        happy-go-lucky Saiyan he is.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pcmgtgya-fw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="http://www.imdb.com/title/tt0121220/?ref_=nv_sr_2" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.7</b>
+                                                        <a href="https://myanimelist.net/anime/813/Dragon_Ball_Z?q=dragon" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a><b>8.31</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Dragon-Ball-Z-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/library/Dragon_Ball_Z">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="go">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/steinscard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Steins;Gate</h5>
+                                    <p class="card-text"><b>Genre:</b>Sci-Fi, Thriller.</p><br />
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong5">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Steins;Gate</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Sci-Fi, Thriller.<br /><br />
+                                                        The self-proclaimed mad scientist Rintarou Okabe rents out a room in a rickety old
+                                                        building in Akihabara, where he indulges
+                                                        himself in his hobby of inventing prospective "future gadgets" with fellow lab members:
+                                                        Mayuri Shiina, his air-headed
+                                                        childhood friend, and Hashida Itaru, a perverted hacker nicknamed "Daru." The three
+                                                        pass the time by tinkering with their
+                                                        most promising contraption yet, a machine dubbed the "Phone Microwave," which performs
+                                                        the strange function of morphing
+                                                        bananas into piles of green gel.<br /> Though miraculous in itself, the phenomenon
+                                                        doesn't provide anything concrete in Okabe's
+                                                        search for a scientific breakthrough; that is, until the lab members are spurred into
+                                                        action by a string of mysterious
+                                                        happenings before stumbling upon an unexpected success—the Phone Microwave can send
+                                                        emails to the past, altering the
+                                                        flow of history.<br /> Adapted from the critically acclaimed visual novel by 5pb. and
+                                                        Nitroplus, Steins;Gate takes Okabe through
+                                                        the depths of scientific theory and practicality. Forced across the diverging threads
+                                                        of past and present, Okabe must
+                                                        shoulder the burdens that come with holding the key to the realm of time.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pKpbUxZrb5s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt1910272/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.7</b>
+                                                        <a href="https://myanimelist.net/anime/9253/Steins_Gate?q=steins" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>9.14</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Steins-Gate">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/steinsgate">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="roku">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/dncard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Death Note</h5>
+                                    <p class="card-text"><b>Genre:</b>Mystery, Police, Psychological, Supernatural, Thriller.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong6">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Death Note</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Mystery, Police, Psychological, Supernatural, Thriller.<br /><br />
+                                                        A shinigami, as a god of death, can kill any person—provided they see their victim's
+                                                        face and write their victim's name in a notebook called a Death Note. One day, Ryuk,
+                                                        bored by the shinigami lifestyle and interested in seeing how
+                                                        a human would use a Death Note, drops one into the human realm.High school student and
+                                                        prodigy Light Yagami stumbles upon the Death Note and—since he deplores the state of
+                                                        the world—tests the deadly notebook by writing a criminal's name in it. When the
+                                                        criminal dies immediately following his experiment
+                                                        with the Death Note, Light is greatly surprised and quickly recognizes how devastating
+                                                        the power that has fallen into his hands could be.With this divine capability, Light
+                                                        decides to extinguish all criminals in order to build a new world where crime does not
+                                                        exist and people worship him as a god. Police, however, quickly discover that a serial
+                                                        killer is targeting criminals
+                                                        and, consequently, try to apprehend the culprit. To do this, the Japanese investigators
+                                                        count on the assistance of the best detective in the world: a young and eccentric man
+                                                        known only by the name of L.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HK3lkfhX_XY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="http://www.imdb.com/title/tt0877057/?ref_=fn_al_tt_2" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>9.0</b>
+                                                        <a href="https://myanimelist.net/anime/1535/Death_Note" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a><b>8.68</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Death-Note-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/library/Death_Note">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="nana">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/cgcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Code Geass</h5>
+                                    <p class="card-text"><b>Genre:</b>Action, Mecha, Military, School, Super Power.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong7">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Code Geass</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Mecha, Military, School, Super Power.<br /><br />
+                                                        On August 10th of the year 2010 the Holy Empire of Britannia began a campaign of
+                                                        conquest, its sights set on Japan. Operations were completed in one month thanks to
+                                                        Britannia's deployment of new mobile humanoid armor vehicles dubbed
+                                                        Knightmare Frames. Japan's rights and identity were stripped away, the once proud
+                                                        nation now referred to as Area 11. Its citizens, Elevens, are forced to scratch out a
+                                                        living while the Britannian aristocracy lives comfortably within
+                                                        their settlements. Pockets of resistance appear throughout Area 11, working towards
+                                                        independence for Japan. Lelouch, an exiled Imperial Prince of Britannia posing as a
+                                                        student, finds himself in the heart of the ongoing conflict for the island nation.
+                                                        Through a chance meeting with a mysterious girl named C.C., Lelouch gains his Geass,
+                                                        the
+                                                        power of the king. Now endowed with absolute dominance over any person, Lelouch may
+                                                        finally realize his goal of bringing down Britannia from within!
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ulQGo6X7kFo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="http://www.imdb.com/title/tt0994314/?ref_=fn_al_tt_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.7</b>
+                                                        <a href="https://myanimelist.net/anime/1575/Code_Geass__Hangyaku_no_Lelouch?q=code%20geass"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a><b>8.79</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Code-Geass-Lelouch-of-the-Rebellion-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/code-geass">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="hachi">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/opcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">One Piece</h5>
+                                    <p class="card-text"><b>Genre:</b>Action, Adventure, Comedy, Drama, Fantasy, Shounen, Super Power.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong8">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>One Piece</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Adventure, Comedy, Drama, Fantasy, Shounen,
+                                                        Super Power.<br /><br />
+                                                        Gol D. Roger was known as the Pirate King, the strongest and most infamous being to
+                                                        have sailed the Grand Line. The capture and death of Roger by the World Government
+                                                        brought a change throughout the world. His last words before his
+                                                        death revealed the location of the greatest treasure in the world, One Piece. It was
+                                                        this revelation that brought about the Grand Age of Pirates, men who dreamed of finding
+                                                        One Piece (which promises an unlimited amount of riches
+                                                        and fame), and quite possibly the most coveted of titles for the person who found it,
+                                                        the title of the Pirate King.Enter Monkey D. Luffy, a 17-year-old boy that defies your
+                                                        standard definition of a pirate. Rather than the popular persona of a wicked, hardened,
+                                                        toothless pirate who ransacks villages for fun, Luffy’s reason for being a pirate is
+                                                        one of pure wonder; the thought of an exciting adventure and meeting new and intriguing
+                                                        people, along with finding One Piece, are his reasons of becoming a pirate. Following
+                                                        in the footsteps of his childhood hero, Luffy and his
+                                                        crew travel across the Grand Line, experiencing crazy adventures, unveiling dark
+                                                        mysteries and battling strong enemies, all in order to reach One Piece.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jvkq7akLDiA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="http://www.imdb.com/title/tt0388629/?ref_=fn_al_tt_1" target="">
+                                                            <img src="AnimePage/images/imdb.png" height="25" width="50" />
+                                                        </a><b>8.6</b>
+                                                        <a href="https://myanimelist.net/anime/21/One_Piece" target="">
+                                                            <img src="AnimePage/images/mal.png" height="50" width="50" />
+                                                        </a><b>8.54</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/One-Piece-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/one-piece">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="kyuu">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/aotcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Attack on Titan</h5>
+                                    <p class="card-text"><b>Genre:</b>Action, Drama, Fantasy, Shounen, Super Power, Thriller.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong9">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Attack on Titan</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Drama, Fantasy, Shounen, Super Power, Thriller.<br /><br />
+                                                        Several hundred years ago, humans were nearly exterminated by giants. Giants are
+                                                        typically several stories tall, seem to have no intelligence, devour human beings and,
+                                                        worst of all, seem to do it for the pleasure rather than as a food source. A small
+                                                        percentage of humanity survived by walling themselves in a city protected by extremely
+                                                        high walls, even taller than the biggest of giants.<br />
+
+                                                        Flash forward to the present and the city has not seen a giant in over 100 years.
+                                                        Teenage boy Eren and his foster sister Mikasa witness something horrific as the city
+                                                        walls are destroyed by a super giant that appears out of thin air. As the smaller
+                                                        giants flood the city, the two kids watch in horror as their mother is eaten alive.
+                                                        Eren vows that he will murder every single giant and take revenge for all of mankind.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MGRm4IzK1SQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt2560140/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.8</b>
+                                                        <a href="https://myanimelist.net/anime/16498/Shingeki_no_Kyojin?q=attack%20on%20titan"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>8.49</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Shingeki-no-Kyojin-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/attack-on-titan">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juu">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/bleachcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bleach</h5>
+                                    <p class="card-text"><b>Genre:</b>Action, Comedy, Shounen, Super Power, Supernatural.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong10">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Bleach</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Comedy, Shounen, Super Power, Supernatural.<br /><br />
+                                                        15-year-old Kurosaki Ichigo is not your everyday high school student. He has from as
+                                                        far he can remember always had the ability to see ghosts and spirits. A fateful day
+                                                        arrives as Ichigo encounters the shinigami Kuchiki Rukia, who saves him and his family
+                                                        from a Hollow at the cost of injuring herself. During this encounter, with Rukia unable
+                                                        to defeat the hollow she transfers her shinigami powers into Ichigo. In the aftermath,
+                                                        unable to continue with her job, Rukia allows Ichigo to take on the role of a shinigami
+                                                        in her place as they together defeat the Hollows plaguing Ichigo's town.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oZ67d9XSjFs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt0434665/?ref_=nv_sr_2" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.2</b>
+                                                        <a href="https://myanimelist.net/anime/269/Bleach?q=bleach" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>7.89</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Bleach">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/bleach">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juuichi">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/oregairucard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">My Teen Romantic Comedy SNAFU</h5>
+                                    <p class="card-text"><b>Genre:</b>Comedy, Drama, Romance, School, Slice of Life.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong11">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>My Teen Romantic Comedy SNAFU</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Comedy, Drama, Romance, School, Slice of Life.<br /><br />
+                                                        Hachiman Hikigaya is an apathetic high school student with narcissistic and
+                                                        semi-nihilistic tendencies. He firmly believes that joyful youth is nothing but a
+                                                        farce, and everyone who says otherwise is just lying to themselves.
+
+                                                        In a novel punishment for writing an essay mocking modern social relationships,
+                                                        Hachiman's teacher forces him to join the Volunteer Service Club, a club that aims to
+                                                        extend a helping hand to any student who seeks their support in achieving their goals.
+                                                        With the only other club member being the beautiful ice queen Yukino Yukinoshita,
+                                                        Hachiman finds himself on the front line of other people's problems—a place he never
+                                                        dreamed he would be. As Hachiman and Yukino use their wits to solve many students'
+                                                        problems, will Hachiman's rotten view of society prove to be a hindrance or a tool he
+                                                        can use to his advantage?
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/u-bpwWPNEpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt2703720/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>7.8</b>
+                                                        <a href="https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru?q=oregair"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>8.1</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Yahari-Ore-no-Seishun-Love-Come-wa-Machigatteiru">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/my-teen-romantic-comedy-snafu">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juuni">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/erasedcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Erased</h5>
+                                    <p class="card-text"><b>Genre:</b> Mystery, Psychological, Seinen, Supernatural.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong12">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong12" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Erased</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Mystery, Psychological, Seinen, Supernatural.<br /><br />
+                                                        When tragedy is about to strike, Satoru Fujinuma finds himself sent back several
+                                                        minutes before the accident occurs. The detached, 29-year-old manga artist has taken
+                                                        advantage of this powerful yet mysterious phenomenon, which he calls "Revival," to save
+                                                        many lives.
+
+                                                        However, when he is wrongfully accused of murdering someone close to him, Satoru is
+                                                        sent back to the past once again, but this time to 1988, 18 years in the past. Soon, he
+                                                        realizes that the murder may be connected to the abduction and killing of one of his
+                                                        classmates, the solitary and mysterious Kayo Hinazuki, that took place when he was a
+                                                        child. This is his chance to make things right.
+
+                                                        Boku dake ga Inai Machi follows Satoru in his mission to uncover what truly transpired
+                                                        18 years ago and prevent the death of his classmate while protecting those he cares
+                                                        about in the present.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DwmxEAWjTQQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt5249462/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.6</b>
+                                                        <a href="https://myanimelist.net/manga/39325/Boku_dake_ga_Inai_Machi?q=boku%20dake"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>8.47</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Boku-dake-ga-Inai-Machi">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/erased">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juusan">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/fdcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Future Diary</h5>
+                                    <p class="card-text"><b>Genre:</b> Action, Dub, Mystery, Psychological, Shounen, Supernatural, Thriller.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong13">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong13" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Future Diary</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Dub, Mystery, Psychological, Shounen,
+                                                        Supernatural, Thriller.<br /><br />
+                                                        Lonely high school student, Yukiteru Amano, spends his days writing a diary on his
+                                                        cellphone, while conversing with his two seemingly imaginary friends Deus Ex Machina,
+                                                        who is the god of time and space, and Murmur, the god's servant. Revealing himself to
+                                                        be an actual entity, Deus grants Yukiteru a "Random Diary," which shows highly
+                                                        descriptive entries based on the future and forces him into a bloody battle royale with
+                                                        11 other holders of similarly powerful future diaries.
+
+                                                        With the last person standing designated as the new god of time and space, Yukiteru
+                                                        must find and kill the other 11 in order to survive. He reluctantly teams up with his
+                                                        obsessive stalker Yuno Gasai (who also possesses such a diary), and she takes it upon
+                                                        herself to ensure his safety. But there's more to the girl than meets the eye, as she
+                                                        might have other plans for her unrequited love...
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wNT7pUmZLJ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt2069441/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>7.8</b>
+                                                        <a href="https://myanimelist.net/anime/10620/Mirai_Nikki?q=mirai%20nikki" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>7.87</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Mirai-Nikki-TV-Dub">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/the-future-diary">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juuyon">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/huntercard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hunter X Hunter</h5>
+                                    <p class="card-text"><b>Genre:</b> Action, Adventure, Shounen, Super Power.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong14">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong14" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Hunter X Hunter</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Adventure, Shounen, Super Power.<br /><br />
+                                                        Hunter x Hunter (2011) is set in a world where Hunters exist to perform all manner of
+                                                        dangerous tasks like capturing criminals and bravely searching for lost treasures in
+                                                        uncharted territories. Twelve-year-old Gon Freecss is determined to become the best
+                                                        Hunter possible in hopes of finding his father, who was a Hunter himself and had long
+                                                        ago abandoned his young son. However, Gon soon realizes the path to achieving his goals
+                                                        is far more challenging than he could have ever imagined.
+
+                                                        Along the way to becoming an official Hunter, Gon befriends the lively
+                                                        doctor-in-training Leorio, vengeful Kurapika, and rebellious ex-assassin Killua. To
+                                                        attain their own goals and desires, together the four of them take the Hunter Exam,
+                                                        notorious for its low success rate and high probability of death. Throughout their
+                                                        journey, Gon and his friends embark on an adventure that puts them through many
+                                                        hardships and struggles. They will meet a plethora of monsters, creatures, and
+                                                        characters—all while learning what being a Hunter truly means.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nboMpI9vOhI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt2098220/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.7</b>
+                                                        <a href="https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011?q=hunter%20x" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>9.11</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Hunter-x-Hunter-2011">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/hunter-x-hunter">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juugo">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/anohanacard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anohana</h5>
+                                    <p class="card-text"><b>Genre:</b> Drama, Slice of Life, Supernatural.</p><br />
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong15">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong15" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Anohana</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Drama, Slice of Life, Supernatural.<br /><br />
+                                                        Jinta Yadomi is peacefully living as a recluse, spending his days away from school and
+                                                        playing video games at home
+                                                        instead. One hot summer day, his childhood friend, Meiko "Menma" Honma, appears and
+                                                        pesters him to grant a forgotten
+                                                        wish. He pays her no mind, which annoys her, but he doesn't really care. After all,
+                                                        Menma already died years ago.
+
+                                                        At first, Jinta thinks that he is merely hallucinating due to the summer heat, but he
+                                                        is later on convinced that what
+                                                        he sees truly is the ghost of Menma. Jinta and his group of childhood friends grew
+                                                        apart after her untimely death, but
+                                                        they are drawn together once more as they try to lay Menma's spirit to rest. Re-living
+                                                        their pain and guilt, will they
+                                                        be able to find the strength to help not only Menma move on—but themselves as well?
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/x8fvwC5xVGg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt1913273/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.3</b>
+                                                        <a href="https://myanimelist.net/anime/9989/Ano_Hi_Mita_Hana_no_Namae_wo_Bokutachi_wa_Mada_Shiranai?q=anohana"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>8.54</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Anohana-The-Flower-We-Saw-That-Day">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/anohana-the-flower-we-saw-that-day">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juuroku">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/yournamecard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kimi no na wa.</h5>
+                                    <p class="card-text"><b>Genre:</b> Drama, Movie, Romance, School, Supernatural.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong16">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong16" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Kimi no na wa.</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Drama, Movie, Romance, School, Supernatural.<br /><br />
+                                                        Mitsuha Miyamizu, a high school girl, yearns to live the life of a boy in the bustling
+                                                        city of Tokyo—a dream that
+                                                        stands in stark contrast to her present life in the countryside. Meanwhile in the city,
+                                                        Taki Tachibana lives a busy
+                                                        life as a high school student while juggling his part-time job and hopes for a future
+                                                        in architecture.
+
+                                                        One day, Mitsuha awakens in a room that is not her own and suddenly finds herself
+                                                        living the dream life in Tokyo—but in
+                                                        Taki's body! Elsewhere, Taki finds himself living Mitsuha's life in the humble
+                                                        countryside. In pursuit of an answer to
+                                                        this strange phenomenon, they begin to search for one another.
+
+                                                        Kimi no Na wa. revolves around Mitsuha and Taki's actions, which begin to have a
+                                                        dramatic impact on each other's lives,
+                                                        weaving them into a fabric held together by fate and circumstance.
+
+                                                        Based on the best-selling manga series of the same name, Nanatsu no Taizai follows the
+                                                        adventures of Elizabeth, the
+                                                        third princess of the Kingdom of Liones, and her search for the Seven Deadly Sins. With
+                                                        their help, she endeavors to
+                                                        not only take back her kingdom from the Holy Knights, but to also seek justice in an
+                                                        unjust world.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xU47nhruN-Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt5311514/?ref_=nv_sr_2" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.4</b>
+                                                        <a href="https://myanimelist.net/anime/32281/Kimi_no_Na_wa?q=kimi%20no%20na" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>9.16</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Kimi-no-Na-wa">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juunana">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/sevencard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Seven Deadly Sins</h5>
+                                    <p class="card-text"><b>Genre:</b> Action, Adventure, Ecchi, Fantasy, Shounen, Supernatural.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong17">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong17" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Parasyte: The Maxim</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Adventure, Ecchi, Fantasy, Shounen,
+                                                        Supernatural.<br /><br />
+                                                        In a world similar to the European Middle Ages, the feared yet revered Holy Knights of
+                                                        Britannia use immensely powerful
+                                                        magic to protect the region of Britannia and its kingdoms. However, a small subset of
+                                                        the Knights supposedly betrayed
+                                                        their homeland and turned their blades against their comrades in an attempt to
+                                                        overthrow the ruler of Liones. They were
+                                                        defeated by the Holy Knights, but rumors continued to persist that these legendary
+                                                        knights, called the "Seven Deadly
+                                                        Sins," were still alive. Ten years later, the Holy Knights themselves staged a coup
+                                                        d’état, and thus became the new,
+                                                        tyrannical rulers of the Kingdom of Liones.
+
+                                                        Based on the best-selling manga series of the same name, Nanatsu no Taizai follows the
+                                                        adventures of Elizabeth, the
+                                                        third princess of the Kingdom of Liones, and her search for the Seven Deadly Sins. With
+                                                        their help, she endeavors to
+                                                        not only take back her kingdom from the Holy Knights, but to also seek justice in an
+                                                        unjust world.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wxcvbL6o55M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt3909224/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.2</b>
+                                                        <a href="https://myanimelist.net/anime/23755/Nanatsu_no_Taizai?q=nanatsu" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>8.27</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/The-Seven-Deadly-Sins">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/comics/manga/the-seven-deadly-sins/volumes">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juuhachi">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/onepunchcard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">One Punnch Man</h5>
+                                    <p class="card-text"><b>Genre:</b> Action, Comedy, Parody, Sci-Fi, Seinen, Super Power, Supernatural.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong18">Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong18" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Parasyte: The Maxim</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Drama, Horror, Psychological, Sci-Fi, Seinen.<br /><br />
+                                                        The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a
+                                                        hero. In order to pursue his
+                                                        childhood dream, he trained relentlessly for three years—and lost all of his hair in
+                                                        the process. Now, Saitama is
+                                                        incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact,
+                                                        all it takes to defeat
+                                                        evildoers with just one punch has led to an unexpected problem—he is no longer able to
+                                                        enjoy the thrill of battling and
+                                                        has become quite bored.
+
+                                                        This all changes with the arrival of Genos, a 19-year-old cyborg, who wishes to be
+                                                        Saitama's disciple after seeing what
+                                                        he is capable of. Genos proposes that the two join the Hero Association in order to
+                                                        become certified heroes that will
+                                                        be recognized for their positive contributions to society, and Saitama, shocked that no
+                                                        one knows who he is, quickly
+                                                        agrees. And thus begins the story of One Punch Man, an action-comedy that follows an
+                                                        eccentric individual who longs to
+                                                        fight strong enemies that can hopefully give him the excitement he once felt and just
+                                                        maybe, he'll become popular in
+                                                        the process.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2JAElThbKrI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt4508902/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>9.0</b>
+                                                        <a href="https://myanimelist.net/anime/30276/One_Punch_Man?q=one%20punch" target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>8.72</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/One-Punch-Man">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/One-Punch-Man">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="juukyuu">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/parasytecard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Parasyte: The Maxim</h5>
+                                    <p class="card-text"><b>Genre:</b> Action, Drama, Horror, Psychological, Sci-Fi, Seinen.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong19"	>Find out
+                                        more!</button>
+                                    <div class="modal fade" id="exampleModalLong19" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Parasyte: The Maxim</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Drama, Horror, Psychological, Sci-Fi, Seinen.<br /><br />
+                                                        All of a sudden, they arrived: parasitic aliens that descended upon Earth and quickly
+                                                        infiltrated humanity by burrowing
+                                                        into the brains of vulnerable targets. These insatiable beings acquire full control of
+                                                        their host and are able to morph
+                                                        into a variety of forms in order to feed on unsuspecting prey.
+
+                                                        Sixteen-year-old high school student Shinichi Izumi falls victim to one of these
+                                                        parasites, but it fails to take over
+                                                        his brain, ending up in his right hand instead. Unable to relocate, the parasite, now
+                                                        named Migi, has no choice but to
+                                                        rely on Shinichi in order to stay alive. Thus, the pair is forced into an uneasy
+                                                        coexistence and must defend themselves
+                                                        from hostile parasites that hope to eradicate this new threat to their species.
+                                                    </p>
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <hr />
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rj63TDpaBWk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                    <p id="ratingWatch">
+                                                        <a href="https://www.imdb.com/title/tt3358020/?ref_=nv_sr_1" target="">
+                                                            <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                        </a><b>8.4</b>
+                                                        <a href="https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu?q=parasyte"
+                                                            target="">
+                                                            <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                        </a>
+                                                        <b>8.51</b>
+                                                        <br />
+                                                        <ul id="ratingWatch" class="list-group">
+                                                            <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                            <li class="list-group-item"><a href="http://kissanime.ru/Anime/Kiseijuu-Sei-no-Kakuritsu">Kissanime</a></li>
+                                                            <li class="list-group-item"><a href="http://www.crunchyroll.com/parasyte-the-maxim-">Crunchyroll</a></li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="nijuu">
+                            <div class="card text-center" style="width: 100%;">
+                                <img class="card-img-top" src="{{ url_for('static', filename='anime/tokyocard.jpg') }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tokyo Ghoul</h5>
+                                    <p class="card-text"><b>Genre:</b> Action, Drama, Horror, Mystery, Psychological, Seinen, Supernatural.</p>
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong20">Find out more!</button>
+                                    <div class="modal fade" id="exampleModalLong20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Tokyo Ghoul</b></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="card-text"><b>Genre:</b> Action, Drama, Horror, Mystery, Psychological, Seinen, Supernatural.<br /><br />
+                                                        Tokyo has become a cruel and merciless city—a place where vicious creatures called “ghouls” exist alongside humans. The
+                                                        citizens of this once great metropolis live in constant fear of these bloodthirsty savages and their thirst for human
+                                                        flesh. However, the greatest threat these ghouls pose is their dangerous ability to masquerade as humans and blend in
+                                                        with society.
+                                                        
+                                                        Based on the best-selling supernatural horror manga by Sui Ishida, Tokyo Ghoul follows Ken Kaneki, a shy, bookish
+                                                        college student, who is instantly drawn to Rize Kamishiro, an avid reader like himself. However, Rize is not exactly
+                                                        who she seems, and this unfortunate meeting pushes Kaneki into the dark depths of the ghouls' inhuman world. In a twist
+                                                        of fate, Kaneki is saved by the enigmatic waitress Touka Kirishima, and thus begins his new, secret life as a
+                                                        half-ghoul/half-human who must find a way to integrate into both societies.
+                                                    </p>
+                                                    <hr />
+                                                    <p class="card-text">Watch Trailer</p>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vGuQeQsoRgU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                        <p id="ratingWatch">
+                                                            <a href="https://www.imdb.com/title/tt3741634/?ref_=nv_sr_1" target="">
+                                                                <img src="{{ url_for('static', filename='anime/imdb.png') }}" height="25" width="50" />
+                                                            </a><b>8.0</b>
+                                                            <a href="https://myanimelist.net/anime/22319/Tokyo_Ghoul?q=tokyo" target="">
+                                                                <img src="{{ url_for('static', filename='anime/mal.png') }}" height="50" width="50" />
+                                                            </a>
+                                                            <b>7.99</b>
+                                                            <br />
+                                                            <ul id="ratingWatch" class="list-group">
+                                                                <li class="list-group-item"><b>WATCH ONLINE</b></li>
+                                                                <li class="list-group-item"><a href="http://kissanime.ru/Anime/Tokyo-Ghoul">Kissanime</a></li>
+                                                                <li class="list-group-item"><a href="http://www.crunchyroll.com/parasyte-the-maxim-">Crunchyroll</a></li>
+                                                            </ul>
+                                                        </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <hr />
+                    
+                </section>
+                <!--Right Pane-->
+                <aside class="col-lg-2 col-md-2 col-sm-3 col-xs-12" id="linkSection">
+                    <!-- <h6 class="asidelink">RELATED LINKS</h6>
+                    <hr /> -->
+                    <ul class="list group">
+                        <li class="list-group-item list-group-item-secondary">Related Links</li>
+                        <li class="list-group-item"><a href="http://www.imdb.com/" target="_blank">IMDb</a></li>
+                        <li class="list-group-item"><a href="https://myanimelist.net/" target="_blank">MyAnimeList</a></li>
+                        <li class="list-group-item"><a href="http://kissanime.ru/" target="_blank">Kissanime</a></li>
+                        <li class="list-group-item"><a href="http://www.crunchyroll.com/" target="_blank">Crunchyroll</a></li>
+                    <!-- <hr />
+                    <h6 class="asidelink">ALSO VISIT</h6> -->
+                        <li class="list-group-item list-group-item-secondary">Also Visit</li>
+                        <li class="list-group-item"><a href="/movies" target="">Best Movies of all time.</a>
+                        <li class="list-group-item"><a href="/TV" target="">Best TV series ever.</a>
+                    </ul>
+                </aside>
+            </div>
+            <!--Footer-->
+            <!--Contact Info-->
+            <footer class="container-fluid" id="footer">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 margin">
+                        <h6><b>人間Curious Ningen</b></h6>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div id="contact">
+                            <h6>CONTACT US :<br/>mohityd10@gmail.com / maykashyap25@gmail.com</h6>
+                            <h6>7897716470 / 9650054575</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2" id="followus">
+                        <h6>FOLLOW US ON TWITTER</h6>
+                        <h6>@mohit_0201</h6>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    <div>
+
+</body>
+
+</html>
